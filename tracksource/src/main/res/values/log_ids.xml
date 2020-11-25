@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="item_click_support" type="id" />
+    <item name="fragment_tag" type="id" />
+    <item name="sub_view_tag" type="id" />
+    <item name="sub_view_type" type="id" />
+
+
+    <item name="auto_track_tag_view_value" type="id" />
+    <item name="auto_track_tag_view_id" type="id" />
+    <item name="auto_track_tag_view_ignored" type="id" />
+    <item name="auto_track_tag_view_properties" type="id" />
+    <item name="auto_track_tag_view_onclick_timestamp" type="id" />
+    <item name="auto_track_tag_view_fragment_name" type="id" />
+    <item name="auto_track_tag_view_activity" type="id" />
+    <item name="auto_track_tag_type" type="id" />
+</resources>

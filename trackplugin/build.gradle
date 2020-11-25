@@ -1,0 +1,64 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'groovy'
+
+//compileGroovy {
+//    sourceCompatibility = 1.7
+//    targetCompatibility = 1.7
+//    options.encoding = "UTF-8"
+//}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+targetCompatibility = JavaVersion.VERSION_1_8
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+
+dependencies {
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'org.ow2.asm:asm:9.0'
+    implementation 'org.ow2.asm:asm-commons:9.0'
+    implementation 'com.android.tools.build:gradle:3.0.0'
+}
+
+// 根节点添加
+//version = "1.0.0"
+////发布到组织名称名字，必须填写
+//group = "com.mampod.track"
+////发布到JCenter上的项目名字，必须填写
+//def artifactId = "autotrack-gradle-plugin"
+
+//是否提交到仓库
+//def uploadDataGatherSdk = true
+////是否为正式版
+//def release = true
+
+////// 上传本地maven库
+//uploadArchives {
+//    version = version + '-SNAPSHOT'
+//    repositories {
+//        mavenDeployer {
+//            snapshotRepository(url: uri('../snapshotRepo'))
+//            pom.groupId = groupId
+//            pom.artifactId = artifactId
+//            pom.version = version
+//        }
+//    }
+//}
+
+/*signing {
+    sign configurations.archives
+}*/
+
+apply from:'bintray.gradle'
+
+
+
