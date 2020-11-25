@@ -272,14 +272,14 @@ public class LogMethodVisitor extends AdviceAdapter {
             }
         }
 
-        if (LogAnalyticsUtil.isInstanceOfAdapter(superName)) {
+//        if (LogAnalyticsUtil.isInstanceOfAdapter(superName)) {
             LogMethodCell logMethodCell = LogHookConfig.sAdapterMethods.get(methodNameDesc)
             if (logMethodCell != null) {
                 visitedFragMethods.add(methodNameDesc)
                 LogAnalyticsUtil.visitMethodWithLoadedParams(methodVisitor, Opcodes.INVOKESTATIC, LogHookConfig.LOG_ANALYTICS_BASE, logMethodCell.agentName, logMethodCell.agentDesc, logMethodCell.paramsStart, logMethodCell.paramsCount, logMethodCell.opcodes)
                 isHasTracked = true
             }
-        }
+//        }
 
         if (!isHasTracked) {
             if (methodNameDesc == 'onClick(Landroid/view/View;)V') {
