@@ -21,14 +21,14 @@ public class TrackLog {
     /**
      * 统计app启动
      */
-    public static void staticsInit() {
+    protected static void staticsInit() {
         TrackAgent.getInstance().onEvent(StatisBusiness.Scene.sys, StatisBusiness.Event.init, null, null);
     }
 
     /**
      * 统计app使用时长
      */
-    public static void staticsAppDelay() {
+    protected static void staticsAppDelay() {
         try {
             Long delayTime = System.currentTimeMillis() - (TrackSDK.getInstance().getP().initTime);
             StringBuilder e = new StringBuilder();
@@ -46,7 +46,7 @@ public class TrackLog {
      * @param event
      * @param extra
      */
-    public static void staticsUiEvent(AutoTrackModel event, String extra) {
+    protected static void staticsUiEvent(AutoTrackModel event, String extra) {
         if (event == null) return;
         try {
 
@@ -126,7 +126,7 @@ public class TrackLog {
      * @param event
      * @param extra
      */
-    public static void staticsCommonEVent(String event, String extra) {
+    public static void staticsCommonEvent(String event, String extra) {
         if (TextUtils.isEmpty(event)) return;
         try {
 
