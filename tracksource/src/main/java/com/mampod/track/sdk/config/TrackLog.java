@@ -1,4 +1,4 @@
-package com.mampod.track.hook;
+package com.mampod.track.sdk.config;
 
 import android.text.TextUtils;
 

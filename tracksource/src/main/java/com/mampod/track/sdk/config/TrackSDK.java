@@ -3,7 +3,6 @@ package com.mampod.track.sdk.config;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.mampod.track.hook.TrackLog;
 import com.mampod.track.sdk.TrackAgent;
 import com.mampod.track.sdk.model.CommonInfo;
 

@@ -7,7 +7,7 @@ def siteUrl = 'https://gitee.com/forestye/ergedd_android'    // project homepage
 def gitUrl = 'https://gitee.com/forestye/ergedd_android.git' // project git
 
 // 根节点添加
-version = "2.0.1"
+version = "0.1"
 //发布到组织名称名字，必须填写
 group = "com.mampod.track"
 //发布到JCenter上的项目名字，必须填写

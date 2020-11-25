@@ -24,7 +24,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.mampod.track.hook.AutoTrackHelper;
+import com.mampod.track.sdk.config.AutoTrackHelper;
 import com.mampod.track.sdk.delegate.HookActivityDelegate;
 import com.mampod.track.sdk.delegate.HookFragmentDelegate;
 import com.mampod.tracksource.R;

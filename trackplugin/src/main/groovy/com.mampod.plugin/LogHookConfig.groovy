@@ -19,7 +19,7 @@ public class LogHookConfig {
     /**
      * 日志采集埋点入口类
      */
-    public static final String LOG_ANALYTICS_BASE = "com/mampod/track/hook/AutoTrackHelper"
+    public static final String LOG_ANALYTICS_BASE = "com/mampod/track/sdk/config/AutoTrackHelper"
 
 
     public final

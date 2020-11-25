@@ -1,4 +1,4 @@
-package com.mampod.track.hook;
+package com.mampod.track.sdk.config;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -21,26 +21,20 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.mampod.track.sdk.config.TrackSDK;
 import com.mampod.track.sdk.constants.LogConstants;
 import com.mampod.track.sdk.constants.StatisBusiness;
-import com.mampod.track.sdk.TrackAgent;
 import com.mampod.track.sdk.delegate.HookActivityDelegate;
 import com.mampod.track.sdk.delegate.HookFragmentDelegate;
 import com.mampod.track.sdk.model.AutoTrackModel;
 import com.mampod.track.sdk.model.Flag;
 import com.mampod.track.sdk.tool.AppUtils;
 import com.mampod.track.sdk.tool.AutoTrackUtil;
-import com.mampod.track.sdk.tool.MD5Util;
 import com.mampod.track.sdk.tool.PropertyUtil;
 import com.mampod.tracksource.R;
 
 import org.json.JSONObject;
 
-import java.net.URLEncoder;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 
 /**
  * @package： AutoTrackHelper

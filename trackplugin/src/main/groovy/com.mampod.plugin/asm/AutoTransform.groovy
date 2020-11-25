@@ -129,12 +129,6 @@ public class AutoTransform extends Transform {
                 /** 获得输出文件*/
                 File dest = outputProvider.getContentLocation(destName + "_" + hexName, jarInput.contentTypes, jarInput.scopes, Format.JAR)
 //                Logger.info("||-->jar名称: ${jarInput.getName()}")
-//                def relName = jarInput.getName()
-//                /** 跳过指定含有签名文件的jar包不予修改*/
-//                if (relName != null && relName.contains("javax.servlet-3.0.0.v201112011016")) {
-//                    FileUtils.copyFile(jarInput.file, dest)
-//                    return true
-//                }
                 Logger.info("||-->开始遍历特定jar ${dest.absolutePath}")
                 def modifiedJar = modifyJarFile(jarInput.file, context.getTemporaryDir())
                 Logger.info("||-->结束遍历特定jar ${dest.absolutePath}")
@@ -217,7 +211,6 @@ public class AutoTransform extends Transform {
         }
 
         pluginTmpDir = new File(pluginTmpDir, fileName)
-//        FileUtils.byte2File(bytes, pluginTmpDir.absolutePath, fileName)
         FileUtils.writeByteArrayToFile(pluginTmpDir, bytes)
     }
 
