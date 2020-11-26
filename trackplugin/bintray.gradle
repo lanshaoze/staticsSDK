@@ -24,6 +24,11 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
 }
+
+task groovydocJar(type: Jar, dependsOn: groovydoc){
+    classifier = 'groovydoc'
+    from groovydoc.destinationDir
+}
 //拷贝javadoc文件
 task copyDoc(type: Copy) {
     from "${buildDir}/docs/"
@@ -43,6 +48,7 @@ tasks.withType(Javadoc) {
 //上传到jcenter所需要的源码文件
 artifacts {
     archives javadocJar
+    archives groovydocJar
     archives sourcesJar
 }
 
