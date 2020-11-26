@@ -4,8 +4,8 @@
 apply plugin: 'com.jfrog.bintray'
 
 // 根节点添加
-def siteUrl = 'https://gitee.com/forestye/ergedd_android'    // project homepage
-def gitUrl = 'https://gitee.com/forestye/ergedd_android.git' // project git
+def siteUrl = 'https://gitee.com/forestye/statics-sdk'    // project homepage
+def gitUrl = 'https://gitee.com/forestye/statics-sdk.git' // project git
 
 // 根节点添加
 version = "0.1"
