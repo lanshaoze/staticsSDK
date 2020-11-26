@@ -16,6 +16,7 @@ by Lujie
 #### 使用教程
 
 1.  在项目根目录build.gradle文件中添加以下配置
+
     repositories {
             
             maven {
@@ -24,6 +25,7 @@ by Lujie
             }
             
     }
+    
     dependencies {
         
         //引入sdk插件
@@ -32,6 +34,7 @@ by Lujie
     }
     
     allprojects {
+    
         repositories {
             
             maven {
