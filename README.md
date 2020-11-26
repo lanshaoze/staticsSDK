@@ -45,25 +45,40 @@ by Lujie
 2.  在主app目录build.gradle文件下添加以下配置：
 
     //声明sdk插件
+    
     apply plugin: 'autotrack'
+    
     //插件基础配置
+    
     noTracePoint {
+    
         // 是否打印日志,可选,默认false
+        
         isDebug = true
+        
         // 是否打开SDK的日志全埋点采集,可选,默认true
+        
         isOpenLogTrack = true
+        
         //是否输出插桩后的文件至build文件夹
+        
         isOutputModifyFile = true
+        
         // 因为默认系统包[android.support, androidx]是被过滤掉的,想对默认过滤掉的类插桩的话可以手动添加包名,但是不建议对系统类进行插桩,容易出现不可预期错误,可选,默认空
+        
         include = ["android.support.v7.widget"]
+        
         // [android.support, androidx]默认过滤，可手动追加过滤的包,可选,默认空不追加
+        
         exclude = ["xxx", "xxx"]
     }
     
 3.  在主app目录build.gradle文件下添加以下配置：
     
     dependencies {
+    
         //引入sdk基础资源库
+        
         implementation 'com.mampod.track:tracksource:0.1'
     }
 
