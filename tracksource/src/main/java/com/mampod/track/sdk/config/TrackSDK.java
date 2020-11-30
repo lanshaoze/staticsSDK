@@ -9,7 +9,7 @@ import com.mampod.track.sdk.model.CommonInfo;
 import java.lang.ref.WeakReference;
 
 /**
- * @package： com.mampod.ergedd.statistics
+ * @package： com.mampod.track.sdk.config
  * @Des: 统计SDK
  * @author: Jack-Lu
  * @time: 2018/9/26 下午5:13

@@ -8,7 +8,7 @@ import com.mampod.track.sdk.constants.StatisBusiness;
 import com.mampod.track.sdk.model.AutoTrackModel;
 
 /**
- * @package： com.mampod.track.hook
+ * @package： com.mampod.track.sdk.config
  * @Des:
  * @author: Jack-Lu
  * @time: 2020/11/20 上午10:29
