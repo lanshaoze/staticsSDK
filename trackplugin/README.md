@@ -44,13 +44,13 @@ Android字节码插件，编译期间动态修改代码
 - 2.2、根build.gradle添加插件
  ```
  dependencies {
-     classpath 'oms.mmc:autotrack-gradle-plugin:1.0.0-SNAPSHOT'
+     classpath 'com.mampod.track:autotrack-gradle-plugin:1.0.0-SNAPSHOT'
  }
  ```
 - 3、app的build.gradle中进行配置
 
  ```
- apply plugin: 'oms.mmc.autotrack'
+ apply plugin: 'autotrack'
 
  noTracePoint {
      // 是否打印日志

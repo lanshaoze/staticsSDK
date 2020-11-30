@@ -92,6 +92,10 @@ by Lujie
                         .setBuilder(new TrackSDK.ConfigBuilder(getApplicationContext())) //sdk构造器
                         
                         .init("10001");  //appid
+                        
+                        
+5. 需在项目中的BaseActivity（如果有,否则自己定义），需继承自HookActivityDelegate。 在BaseFragment中（如果有，否则自己定义），需继承自HookFragmentDelegate。
+   用于进行Activity与Fragment相关事件捕获。
 
 
 
