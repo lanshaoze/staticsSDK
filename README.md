@@ -88,7 +88,9 @@ by Lujie
 4. 在app的application类onCreate()方法中添加sdk初始化方法。
 
    TrackSDK.getInstance()
+   
                         .setBuilder(new TrackSDK.ConfigBuilder(getApplicationContext())) //sdk构造器
+                        
                         .init("10001");  //appid
 
 
