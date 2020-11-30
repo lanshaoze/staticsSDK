@@ -8,13 +8,11 @@ import org.objectweb.asm.*
 import org.objectweb.asm.commons.AdviceAdapter
 
 /**
- * @package ： com.mampod.plugin.asm.LogMethodVisitor
- * @Des: 针对日志采集sdk埋点的方法进行修改
+ * 针对日志采集sdk埋点的方法进行修改
+ *
+ * @package com.mampod.plugin.asm
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class LogMethodVisitor extends AdviceAdapter {
 

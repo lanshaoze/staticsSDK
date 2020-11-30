@@ -20,13 +20,11 @@ import java.util.jar.JarOutputStream
 import java.util.zip.ZipEntry
 
 /**
- * @package ： com.mampod.plugin.asm.AutoModify
- * @Des: 自动埋点追踪，遍历所有文件更换字节码
+ * 自动埋点追踪，遍历所有文件更换字节码
+ *
+ * @package com.mampod.plugin.asm
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class AutoTransform extends Transform {
 

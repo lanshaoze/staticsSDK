@@ -1,12 +1,10 @@
 package com.mampod.plugin.bean
 /**
- * @package： com.mampod.plugin.bean.AutoSettingParams
- * @Des:  用于build.gradle中的参数传递
+ * 用于配置build.gradle中的参数传递
+ *
+ * @package com.mampod.plugin.bean
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class AutoSettingParams {
 

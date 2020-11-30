@@ -5,7 +5,11 @@ import com.mampod.plugin.bean.AutoClassFilter
 
 
 /**
- * 目标匹配
+ * 字节码目标匹配类
+ *
+ * @package com.mampod.plugin.util
+ * @author: Jack-Lu
+ * @date:
  */
 public class AutoMatchUtil {
 

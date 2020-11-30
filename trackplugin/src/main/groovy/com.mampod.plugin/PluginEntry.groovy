@@ -11,15 +11,12 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 
 /**
- * @package ： com.mampod.plugin.PluginEntry
- * @Des: 自定义插件入口
+ * 自定义插件
+ *
+ * @package com.mampod.plugin
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
-
 class PluginEntry implements Plugin<Project> {
 
     @Override

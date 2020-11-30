@@ -12,15 +12,13 @@ import com.mampod.plugin.LogHookConfig
 import com.mampod.plugin.util.LogAnalyticsUtil
 
 /**
- * @package ： com.mampod.plugin.asm.AutoClassVisitor
- * @Des: 类的遍历，遍历其中方法，满足两个条件才能修改方法字节码：
- *        1、类要匹配
- *        2、方法匹配
+ * 类的遍历，遍历其中方法，满足两个条件才能修改方法字节码：
+ *          1、类要匹配
+ *          2、方法匹配
+ *
+ * @package com.mampod.plugin.asm.AutoClassVisitor
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class AutoClassVisitor extends ClassVisitor {
 

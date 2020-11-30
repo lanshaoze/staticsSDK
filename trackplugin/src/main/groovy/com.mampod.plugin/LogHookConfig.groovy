@@ -5,15 +5,12 @@ import com.sun.org.apache.bcel.internal.generic.IALOAD
 import jdk.internal.org.objectweb.asm.Opcodes
 
 /**
- * @package ： com.mampod.plugin.LogHookConfig
- * @Des: 针对日志采集系统进行专门配置
+ * 针对日志采集系统进行专门配置
+ *
+ * @package com.mampod.plugin
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
-
 public class LogHookConfig {
 
     /**

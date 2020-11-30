@@ -1,18 +1,15 @@
 package com.mampod.plugin.asm
 
-import com.mampod.plugin.util.Logger
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.ClassWriter
 
 /**
- * @package： com.mampod.plugin.asm.AutoModify
- * @Des:  修改字节码
+ * 修改字节码
+ *
+ * @package com.mampod.plugin.asm
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class AutoModify {
 

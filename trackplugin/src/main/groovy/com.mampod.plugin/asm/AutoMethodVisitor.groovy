@@ -8,6 +8,13 @@ import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
 import org.objectweb.asm.commons.AdviceAdapter
 
+/**
+ * ASM字节码方法扫描类
+ *
+ * @package com.mampod.plugin.asm
+ * @author: Jack-Lu
+ * @date:
+ */
 public class AutoMethodVisitor extends AdviceAdapter {
 
     String methodName

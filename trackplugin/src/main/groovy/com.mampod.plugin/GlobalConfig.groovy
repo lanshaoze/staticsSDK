@@ -3,15 +3,12 @@ package com.mampod.plugin
 import com.mampod.plugin.bean.AutoClassFilter
 import com.mampod.plugin.bean.AutoSettingParams
 import org.gradle.api.Project
-
 /**
- * @package： com.mampod.plugin.GlobalConfig
- * @Des:  全局配置类
+ * 全局配置类
+ *
+ * @package com.mampod.plugin
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class GlobalConfig {
     private static Project project

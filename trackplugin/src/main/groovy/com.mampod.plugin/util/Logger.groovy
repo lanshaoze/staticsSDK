@@ -3,6 +3,13 @@ package com.mampod.plugin.util
 
 import java.lang.reflect.Array
 
+/**
+ * 日志打印工具类
+ *
+ * @package com.mampod.plugin.util
+ * @author: Jack-Lu
+ * @date:
+ */
 public class Logger {
     private static boolean isDebug = true
     public static HashMap<Integer, String> accCodeMap = new HashMap<>()

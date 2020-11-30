@@ -1,5 +1,12 @@
 package com.mampod.plugin.bean
 
+/**
+ * 用于手机app相关事件信息模型类
+ *
+ * @package com.mampod.plugin.bean
+ * @author: Jack-Lu
+ * @date:
+ */
 public class LogMethodCell {
     // 原方法名
     String name
