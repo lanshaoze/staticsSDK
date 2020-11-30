@@ -1,13 +1,11 @@
 package com.mampod.track.sdk.model;
 
 /**
- * @package： com.mampod.ergedd.statistics.sdk.model
- * @Des:
+ * 自定义log数据模型
+ *
+ * @package com.mampod.track.sdk.model
  * @author: Jack-Lu
- * @time: 2020/11/2 下午6:37
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class MethodCell {
     private String pageName; //页面名称

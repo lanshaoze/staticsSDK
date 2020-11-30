@@ -9,13 +9,11 @@ import com.mampod.track.sdk.model.CommonInfo;
 import java.lang.ref.WeakReference;
 
 /**
- * @package： com.mampod.track.sdk.config
- * @Des: 统计SDK
+ * 统计SDK
+ *
+ * @package com.mampod.track.sdk.config
  * @author: Jack-Lu
- * @time: 2018/9/26 下午5:13
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class TrackSDK {
 

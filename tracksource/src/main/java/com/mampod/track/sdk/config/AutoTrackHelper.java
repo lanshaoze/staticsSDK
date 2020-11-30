@@ -37,13 +37,11 @@ import org.json.JSONObject;
 import java.util.Locale;
 
 /**
- * @package： com.mampod.track.sdk.config
- * @Des: 全埋点的入口类
+ * 全埋点的入口类
+ *
+ * @package com.mampod.track.sdk.config
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class AutoTrackHelper {
 

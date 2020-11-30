@@ -3,13 +3,11 @@ package com.mampod.track.sdk.listener;
 import org.json.JSONObject;
 
 /**
- * @package： com.mampod.ergedd.statistics.sdk.ui
- * @Des: 界面方法收集接口
+ * 界面方法收集接口
+ *
+ * @package com.mampod.ergedd.statistics.sdk.ui
  * @author: Jack-Lu
- * @time: 2020/10/26 下午2:17
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public interface IPageCollection {
     /**

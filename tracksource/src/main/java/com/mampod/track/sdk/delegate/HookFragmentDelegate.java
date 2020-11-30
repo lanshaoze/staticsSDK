@@ -13,13 +13,11 @@ import com.mampod.track.sdk.tool.AutoTrackUtil;
 import org.json.JSONObject;
 
 /**
- * @package： com.mampod.ergedd.statistics.sdk.delegate
- * @Des:
+ * Fragment代理类
+ *
+ * @package com.mampod.track.sdk.delegate
  * @author: Jack-Lu
- * @time: 2020/10/27 下午4:45
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public abstract class HookFragmentDelegate extends ImmersionFragment implements IPageCollection {
 

@@ -14,10 +14,6 @@ import java.util.HashMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-/**
- * Created by dk on 16/11/15.
- */
-
 public class ChannelUtil {
     public static final String GOOGLE_PLAY = "googleplay";
 

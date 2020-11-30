@@ -12,15 +12,12 @@ import com.mampod.track.sdk.annotation.PageOpen;
 import com.mampod.track.sdk.tool.AutoTrackUtil;
 
 import org.json.JSONObject;
-
 /**
- * @package： com.mampod.ergedd.statistics.sdk.delegate
- * @Des: Activity界面代理类
+ * Activity界面代理类
+ *
+ * @package com.mampod.track.sdk.delegate
  * @author: Jack-Lu
- * @time: 2020/10/26 下午3:06
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class HookActivityDelegate extends FragmentActivity implements IPageCollection {
 

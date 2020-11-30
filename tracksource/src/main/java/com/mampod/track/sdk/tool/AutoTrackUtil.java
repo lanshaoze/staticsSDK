@@ -42,13 +42,11 @@ import java.util.List;
 import java.util.Locale;
 
 /**
- * @package： com.mampod.track.sdk.tool.AutoTrackUtil
- * @Des: 自动埋点工具类
+ * 自动埋点工具类
+ *
+ * @package com.mampod.track.sdk.tool
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class AutoTrackUtil {
 

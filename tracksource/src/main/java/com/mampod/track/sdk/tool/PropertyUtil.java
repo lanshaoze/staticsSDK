@@ -10,13 +10,11 @@ import java.lang.reflect.Method;
 import java.util.TreeMap;
 
 /**
- * @package： com.mampod.ergedd.statistics
- * @Des: 反射对象属性操作类
+ * 反射对象属性操作类
+ *
+ * @package com.mampod.track.sdk.tool
  * @author: Jack-Lu
- * @time: 2018/9/26 下午6:36
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class PropertyUtil {
 

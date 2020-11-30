@@ -1,13 +1,11 @@
 package com.mampod.track.sdk.model;
 
 /**
- * @package：com.mampod.track.sdk.model
- * @Des:
+ * 上报日志分类
+ *
+ * @package com.mampod.track.sdk.model
  * @author: Jack-Lu
- * @time: 2020/11/23 下午3:44
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public enum Flag {
     p, //page

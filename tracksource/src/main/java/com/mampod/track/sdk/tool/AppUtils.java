@@ -8,15 +8,6 @@ import android.util.Log;
 
 import java.util.List;
 
-/**
- * @package：com.mampod.track.sdk.tool
- * @Des:
- * @author: Jack-Lu
- * @time: 2020/11/23 上午10:42
- * @change:
- * @changtime:
- * @changelog:
- */
 public class AppUtils {
     /**
      * 程序是否在前台运行

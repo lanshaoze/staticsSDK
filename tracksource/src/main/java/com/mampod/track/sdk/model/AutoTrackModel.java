@@ -1,13 +1,11 @@
 package com.mampod.track.sdk.model;
 
 /**
- * @package： com.mampod.track.sdk.model
- * @Des: 统计上报数据模型
+ * 统计上报数据模型
+ *
+ * @package com.mampod.track.sdk.model
  * @author: Jack-Lu
- * @time: 2020/11/18 下午2:43
- * @change:
- * @changtime:
- * @changelog:
+ * @date: 2020/11/18 下午2:43
  */
 public class AutoTrackModel {
     private String track_title;

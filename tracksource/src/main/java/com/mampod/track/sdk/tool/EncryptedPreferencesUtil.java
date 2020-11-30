@@ -4,10 +4,6 @@ import android.content.Context;
 
 import com.pddstudio.preferences.encrypted.EncryptedPreferences;
 
-/**
- * Created by dk on 18/2/24.
- */
-
 public class EncryptedPreferencesUtil {
     static EncryptedPreferences encryptedPreferences;
 

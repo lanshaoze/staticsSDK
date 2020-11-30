@@ -7,13 +7,11 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
 /**
- * @package： com.mampod.ergedd.statistics
- * @Des: 网络类型判断
+ * 网络类型判断
+ *
+ * @package com.mampod.track.sdk.tool
  * @author: Jack-Lu
- * @time: 2018/9/27 11:18
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class NetStateUtils {
 

@@ -1,13 +1,10 @@
 package com.mampod.track.sdk.constants;
-
 /**
- * @package： LogConstants
- * @Des: 全埋点的一些常量字段
+ * 全埋点的一些常量字段
+ *
+ * @package com.mampod.track.sdk.constants
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class LogConstants {
 

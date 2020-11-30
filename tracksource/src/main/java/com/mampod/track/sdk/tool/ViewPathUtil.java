@@ -20,13 +20,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * @package： ViewPathUtil
- * @Des: view唯一ID生成器
+ * view唯一ID生成器
+ *
+ * @package com.mampod.track.sdk.tool
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class ViewPathUtil {
 

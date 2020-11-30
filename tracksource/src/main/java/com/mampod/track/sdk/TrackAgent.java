@@ -27,15 +27,12 @@ import java.util.TreeMap;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
-
 /**
- * @package： com.mampod.ergedd.statistics
- * @Des: 事件上报代理类
+ * 事件上报代理类
+ *
+ * @package com.mampod.track.sdk
  * @author: Jack-Lu
- * @time: 2020/11/10 下午4:04
- * @change:
- * @changtime:
- * @changelog:
+ * @date: 2020/11/10 下午4:04
  */
 public class TrackAgent {
 

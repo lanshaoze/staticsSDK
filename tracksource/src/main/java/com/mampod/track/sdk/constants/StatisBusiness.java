@@ -1,13 +1,11 @@
 package com.mampod.track.sdk.constants;
 
 /**
- * @package： com.mampod.ergedd.statistics
- * @Des: 统计业务类型
+ * 统计业务类型
+ *
+ * @package com.mampod.track.sdk.constants
  * @author: Jack-Lu
- * @time: 2018/9/26 下午4:16
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class StatisBusiness {
 

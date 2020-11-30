@@ -9,13 +9,11 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
 /**
- * @package： com.mampod.ergedd.statistics
- * @Des: 公共参数类
+ * 公共参数类
+ *
+ * @package com.mampod.track.sdk.model
  * @author: Jack-Lu
- * @time: 2018/9/26 下午5:59
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class CommonInfo {
     private String d; //用户UUID

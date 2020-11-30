@@ -6,13 +6,11 @@ import java.util.UUID;
 import java.util.zip.CRC32;
 
 /**
- * @package：com.mampod.track.sdk.tool
- * @Des:
+ * crc32算法类
+ *
+ * @package com.mampod.track.sdk.tool
  * @author: Jack-Lu
- * @time: 2020/11/20 下午4:13
- * @change:
- * @changtime:
- * @changelog:
+ * @date: 2020/11/20 下午4:13
  */
 public class SecurityUtils {
     public static String[] chars = new String[]{"0", "1", "2", "3", "4", "5",

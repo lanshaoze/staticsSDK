@@ -5,13 +5,11 @@ import android.util.Log;
 import java.util.Random;
 
 /**
- * @package：com.mampod.track.sdk.tool
- * @Des:
+ * 随机算法类
+ *
+ * @package com.mampod.track.sdk.tool
  * @author: Jack-Lu
- * @time: 2020/11/20 下午4:30
- * @change:
- * @changtime:
- * @changelog:
+ * @date: 2020/11/20 下午4:30
  */
 public class RandomUtil {
     private static final int LENGTH = 8;

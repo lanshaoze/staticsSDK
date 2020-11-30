@@ -31,17 +31,16 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 
 
+
 /**
- * @package： com.mampod.track.sdk.io
- * @Des: 日志上报请求类
+ * 日志上报请求类
+ *
+ * @package com.mampod.track.sdk.io
  * @author: Jack-Lu
- * @time:
- * @change:
- * @changtime:
- * @changelog:
+ * @date:
  */
 public class LogReport {
-    public static final String TAG = "OkHttpManger";
+    public static final String TAG = "LogReport";
     private static OkHttpClient okHttpClient;
     private static LogReport manager;
     private static final HashMap<String, List<Cookie>> cookieStore = new HashMap<>();

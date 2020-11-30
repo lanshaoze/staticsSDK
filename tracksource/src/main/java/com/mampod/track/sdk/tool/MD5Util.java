@@ -6,11 +6,6 @@ import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * MS5
- * from https://github.com/litesuits/android-common/
- */
-
 public class MD5Util {
     private static final String TAG = MD5Util.class.getSimpleName();
     private static final int STREAM_BUFFER_LENGTH = 1024;
