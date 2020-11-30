@@ -53,11 +53,6 @@ dependencies {
     // fragment快速实现（可选）
     compile 'com.gyf.immersionbar:immersionbar-components:3.0.0'
 
-    // 基础依赖包，必须要依赖
-//    api(name: 'immersionbar-3.0.0', ext: 'aar')
-    // fragment快速实现（可选）
-//    api(name: 'immersionbar-components-3.0.0', ext: 'aar')
-
     // encrypted perferences
     implementation 'com.pddstudio:encrypted-preferences:1.3.0'
 
