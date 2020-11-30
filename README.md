@@ -29,7 +29,7 @@ by Lujie
     dependencies {
         
         //引入sdk插件
-        classpath 'com.mampod.track:trackplugin:0.1'
+        classpath 'com.mampod.track:trackplugin:{version}'
         
     }
     
@@ -82,7 +82,7 @@ by Lujie
     
         //引入sdk基础资源库
         
-        implementation 'com.mampod.track:tracksource:0.1'
+        implementation 'com.mampod.track:tracksource:{version}'
     }
     
 4. 在app的application类onCreate()方法中添加sdk初始化方法。
@@ -91,7 +91,7 @@ by Lujie
    
                         .setBuilder(new TrackSDK.ConfigBuilder(getApplicationContext())) //sdk构造器
                         
-                        .init("10001");  //appid
+                        .init({appid});  //appid
                         
                         
 5. 需在项目中的BaseActivity（如果有,否则自己定义），需继承自HookActivityDelegate。 在BaseFragment中（如果有，否则自己定义），需继承自HookFragmentDelegate。
