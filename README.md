@@ -96,6 +96,9 @@ by Lujie
                         
 5. 需在项目中的BaseActivity（如果有,否则自己定义），需继承自HookActivityDelegate。 在BaseFragment中（如果有，否则自己定义），需继承自HookFragmentDelegate。
    用于进行Activity与Fragment相关事件捕获。
+   
+   在具体的activity或fragment重写getDes()方法，定义代表界面含义。
+   如若不重写，则代表该界面不进行统计。
 
 
 
