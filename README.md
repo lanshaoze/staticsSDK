@@ -21,7 +21,7 @@ by Lujie
             
             maven {
                 //远程maven地址
-                url 'https://dl.bintray.com/idremo/Track'
+                url 'https://dl.bintray.com/idremo/statistics'
             }
             
     }
@@ -39,7 +39,7 @@ by Lujie
             
             maven {
                //远程maven地址
-               url 'https://dl.bintray.com/idremo/Track'
+               url 'https://dl.bintray.com/idremo/statistics'
             }
             
         }

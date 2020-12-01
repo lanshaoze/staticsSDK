@@ -7,7 +7,7 @@ def siteUrl = 'https://gitee.com/forestye/statics-sdk'    // project homepage
 def gitUrl = 'https://gitee.com/forestye/statics-sdk.git' // project git
 
 // 根节点添加
-version = "0.1"
+version = "0.0.1"
 //发布到组织名称名字，必须填写
 group = "com.mampod.track"
 //发布到JCenter上的项目名字，必须填写
@@ -95,7 +95,7 @@ bintray {
     configurations = ['archives']
     pkg {//这里就是我们的包的初始信息！！
         userOrg = "idremo" //对应JCenter的你的组织或个人名字
-        repo = "Track" //对应JCenter的你的库名
+        repo = "statistics" //对应JCenter的你的库名
         name = libName    //对应JCenter上的项目（包）名字，必须填写
         websiteUrl = siteUrl
         vcsUrl = gitUrl

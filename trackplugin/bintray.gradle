@@ -1,4 +1,3 @@
-
 // 根节点添加
 //apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
@@ -25,7 +24,7 @@ task javadocJar(type: Jar, dependsOn: javadoc) {
     from javadoc.destinationDir
 }
 
-task groovydocJar(type: Jar, dependsOn: groovydoc){
+task groovydocJar(type: Jar, dependsOn: groovydoc) {
     classifier = 'groovydoc'
     from groovydoc.destinationDir
 }
@@ -36,14 +35,13 @@ task copyDoc(type: Copy) {
 }
 
 tasks.withType(Javadoc) {
-    options{
+    options {
         encoding "UTF-8"
         charSet 'UTF-8'
         links "http://docs.oracle.com/javase/7/docs/api"
     }
     options.addStringOption('Xdoclint:none', '-quiet')
 }
-
 
 //上传到jcenter所需要的源码文件
 artifacts {
@@ -64,8 +62,6 @@ artifacts {
 //        }
 //    }
 //}
-
-
 
 // 配置maven库，生成POM.xml文件
 install {
@@ -107,7 +103,7 @@ bintray {
     configurations = ['archives']
     pkg {//这里就是我们的包的初始信息！！
         userOrg = "idremo" //对应JCenter的你的组织或个人名字
-        repo = "Track" //对应JCenter的你的库名
+        repo = "statistics" //对应JCenter的你的库名
         name = libName    //对应JCenter上的项目（包）名字，必须填写
         websiteUrl = siteUrl
         vcsUrl = gitUrl
