@@ -1,4 +1,3 @@
-# Luffy
 Android字节码插件，编译期间动态修改代码
 
 
@@ -44,13 +43,13 @@ Android字节码插件，编译期间动态修改代码
 - 2.2、根build.gradle添加插件
  ```
  dependencies {
-     classpath 'com.mampod.track:autotrack-gradle-plugin:1.0.0-SNAPSHOT'
+     classpath 'oms.mmc:autotrack-gradle-plugin:1.0.0-SNAPSHOT'
  }
  ```
 - 3、app的build.gradle中进行配置
 
  ```
- apply plugin: 'autotrack'
+ apply plugin: 'oms.mmc.autotrack'
 
  noTracePoint {
      // 是否打印日志
