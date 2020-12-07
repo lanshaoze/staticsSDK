@@ -81,9 +81,6 @@
 -keep class com.mampod.track.sdk.model.** {
       *;
 }
--keep class com.mampod.track.hook.** {
-      *;
-}
 -keep class com.mampod.track.sdk.TrackAgent{
       *;
 }
