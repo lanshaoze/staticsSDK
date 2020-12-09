@@ -342,6 +342,8 @@ public class AutoTrackUtil {
                 }
                 if (itemview instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) itemview;
+                    group.setTag(R.id.sub_view_tag, position);
+                    group.setTag(R.id.auto_track_tag_type, "list");
                     for (int i = 0; i < group.getChildCount(); i++) {
                         traverseViewForViewHolder(group.getChildAt(i), position);
                     }

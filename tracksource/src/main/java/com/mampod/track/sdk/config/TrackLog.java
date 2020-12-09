@@ -1,6 +1,7 @@
 package com.mampod.track.sdk.config;
 
 import android.text.TextUtils;
+import android.view.View;
 
 import com.mampod.track.sdk.TrackAgent;
 import com.mampod.track.sdk.config.TrackSDK;
@@ -128,7 +129,6 @@ public class TrackLog {
         if (TextUtils.isEmpty(event)) return;
         try {
 
-
             StringBuilder e = new StringBuilder();
             e.append("l1=").append("at")
                     .append("&l2=").append(event);
@@ -137,12 +137,22 @@ public class TrackLog {
             }
 
             String rl = e.toString().toLowerCase();
-            if (rl.length() > 100) {
-                rl = rl.substring(0, 99);
+            if (rl.length() > 300) {
+                rl = rl.substring(0, 300);
             }
             TrackAgent.getInstance().onEvent(StatisBusiness.Scene.point, StatisBusiness.Event.v1, StatisBusiness.Action.v, rl);
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 用于区分列表复用导致的无法区分点击事件问题，通过修改页面路径区分
+     *
+     * @param screen
+     * @param view
+     */
+    public static void modifyScreenEvent(String screen, View view) {
+        AutoTrackHelper.modifyClick(screen, view);
     }
 }

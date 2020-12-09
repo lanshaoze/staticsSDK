@@ -933,12 +933,19 @@ public class AutoTrackHelper {
 
     public static void trackViewOnClick(View view) {
         try {
-            //获取Activity
-            Activity activity = AutoTrackUtil.getActivityFromView(view);
-
             if (isDeBounceTrackForView(view)) {
                 return;
             }
+            modifyClick(null, view);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void modifyClick(String screen, View view) {
+        try {
+            //获取Activity
+            Activity activity = AutoTrackUtil.getActivityFromView(view);
 
             AutoTrackModel model = new AutoTrackModel();
 
@@ -956,9 +963,13 @@ public class AutoTrackHelper {
                 }
             }
             // 3、获取当前页面
-            String screen_name = AutoTrackUtil.getScreenNameFromView(activity, view);
-            if (!TextUtils.isEmpty(screen_name)) {
-                model.setTrack_screen_name(screen_name);
+            if (TextUtils.isEmpty(screen)) {
+                String screen_name = AutoTrackUtil.getScreenNameFromView(activity, view);
+                if (!TextUtils.isEmpty(screen_name)) {
+                    model.setTrack_screen_name(screen_name);
+                }
+            } else {
+                model.setTrack_screen_name(screen);
             }
 
             // 4、获取ExpandableListView的控件名:ViewId
