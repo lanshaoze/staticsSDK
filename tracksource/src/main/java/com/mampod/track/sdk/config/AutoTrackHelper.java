@@ -1082,17 +1082,18 @@ public class AutoTrackHelper {
             if (activity == null || !(activity instanceof HookActivityDelegate)) {
                 return;
             }
-//            if (activity != null) {
-//                AutoTrackModel model = new AutoTrackModel();
-//                String activityTitle = AutoTrackUtil.getActivityTitle(activity);
-//                if (!TextUtils.isEmpty(activityTitle)) {
-//                    model.setTrack_title(activityTitle);
-//                }
-//                String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenNameForActivity(activity));
-//                model.setTrack_screen_name(screenName);
-////                Log.d("自动埋点", "trackActivityAppViewScreenResume:" + properties.toString());
-//            }
-
+            if (activity != null) {
+                AutoTrackModel model = new AutoTrackModel();
+                String activityTitle = AutoTrackUtil.getActivityTitle(activity);
+                if (!TextUtils.isEmpty(activityTitle)) {
+                    model.setTrack_title(activityTitle);
+                }
+                String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenNameForActivity(activity));
+                model.setTrack_screen_name(screenName);
+                model.setM(StatisBusiness.Action.i.toString());
+                model.setFlag(Flag.p);
+                TrackLog.staticsUiEvent(model, null);
+            }
 
             if (!TrackSDK.getInstance().isForground()) {
                 //标记从后台进入前台
