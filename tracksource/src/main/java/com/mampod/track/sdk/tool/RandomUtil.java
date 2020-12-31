@@ -104,15 +104,15 @@ public class RandomUtil {
      * @return
      */
 
-    public static String generateNumber2() {
+    public static String generateNumber2(int numLength) {
 
         String no = "";
 
-        int num[] = new int[8];
+        int num[] = new int[numLength];
 
         int c = 0;
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < numLength; i++) {
 
             num[i] = new Random().nextInt(10);
 

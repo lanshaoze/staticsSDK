@@ -7,6 +7,10 @@ import com.mampod.track.sdk.TrackAgent;
 import com.mampod.track.sdk.config.TrackSDK;
 import com.mampod.track.sdk.constants.StatisBusiness;
 import com.mampod.track.sdk.model.AutoTrackModel;
+import com.mampod.track.sdk.model.Flag;
+import com.mampod.track.sdk.tool.RandomUtil;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 日志统计工具类
@@ -16,6 +20,7 @@ import com.mampod.track.sdk.model.AutoTrackModel;
  * @date:
  */
 public class TrackLog {
+    private static AtomicInteger mOrderNum = new AtomicInteger();
 
     /**
      * 统计app启动
@@ -45,7 +50,7 @@ public class TrackLog {
      * @param event
      * @param extra
      */
-    protected static void staticsUiEvent(AutoTrackModel event, String extra) {
+    protected synchronized static void staticsUiEvent(AutoTrackModel event, String extra) {
         if (event == null) return;
         try {
 
@@ -53,29 +58,52 @@ public class TrackLog {
             if (TextUtils.isEmpty(screen) || screen.contains("unknow")) {
                 return;
             }
+            String subScreen = event.getTrack_sub_screen_name();
+            if (!TextUtils.isEmpty(subScreen) && subScreen.contains("unknow")) {
+                return;
+            }
+
+            //6位随机数
+            event.setRandom_id(RandomUtil.generateNumber2(6));
+            //增加顺序号
+            event.setOrder_num(mOrderNum.incrementAndGet());
 
             StringBuilder l2 = new StringBuilder();
-            if (event.getFlag() != null) {
-                l2.append(event.getFlag());
-            }
 
-            if (!TextUtils.isEmpty(event.getM())) {
-                l2.append("#").append(event.getM());
-            }
+            String content = event.getFlag() == Flag.p ? event.getM() :
+                    (event.getFlag() == Flag.l ? (TextUtils.isEmpty(event.getTrack_element_id()) ? "" : event.getTrack_element_id()) :
+                            event.getTrack_element_id() + (TextUtils.isEmpty(event.getTrack_element_content()) ? "" : ("|" + event.getTrack_element_content())));
 
-            l2.append("#").append(screen);
 
-            if (!TextUtils.isEmpty(event.getTrack_element_id())) {
-                l2.append("#").append(event.getTrack_element_id());
-            }
+            l2.append(event.getRandom_id()).append("#")
+                    .append(event.getOrder_num()).append("#")
+                    .append(event.getFlag()).append("#")
+                    .append(event.getTrack_screen_name()).append("#")
+                    .append(event.getTrack_sub_screen_name()).append("#")
+                    .append(content).append("#")
+                    .append(event.getFlag() == Flag.l ? event.getTrack_element_position() : "");
 
-//            if (!TextUtils.isEmpty(event.getTrack_element_type())) {
-//                l2.append("#").append(event.getTrack_element_type());
+//            if (event.getFlag() != null) {
+//                l2.append(event.getFlag());
 //            }
-
-            if (!TextUtils.isEmpty(event.getTrack_element_content())) {
-                l2.append("#").append(event.getTrack_element_content());
-            }
+//
+//            if (!TextUtils.isEmpty(event.getM())) {
+//                l2.append("#").append(event.getM());
+//            }
+//
+//            l2.append("#").append(screen);
+//
+//            if (!TextUtils.isEmpty(event.getTrack_element_id())) {
+//                l2.append("#").append(event.getTrack_element_id());
+//            }
+//
+////            if (!TextUtils.isEmpty(event.getTrack_element_type())) {
+////                l2.append("#").append(event.getTrack_element_type());
+////            }
+//
+//            if (!TextUtils.isEmpty(event.getTrack_element_content())) {
+//                l2.append("#").append(event.getTrack_element_content());
+//            }
 
 
             StringBuilder e = new StringBuilder();

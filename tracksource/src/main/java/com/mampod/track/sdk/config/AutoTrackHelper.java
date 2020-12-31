@@ -293,12 +293,17 @@ public class AutoTrackHelper {
             if (!TextUtils.isEmpty(activityTitle)) {
                 model.setTrack_title(activityTitle);
             }
-            String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getRoutersData(fragment));
+            //大页面
+            String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenName(activity));
             model.setTrack_screen_name(screenName);
+            //小页面
+            String subScreenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenName(fragment));
+            model.setTrack_sub_screen_name(subScreenName);
 //            Log.d("自动埋点", "trackFragmentAppViewScreen:" + properties.toString());
-            model.setM(StatisBusiness.Action.i.toString());
+//            model.setM(StatisBusiness.Action.i.toString());
+            //消息类型
             model.setFlag(Flag.p);
-            TrackLog.staticsUiEvent(model, model.getTrack_element_position());
+            TrackLog.staticsUiEvent(model, null);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -331,25 +336,29 @@ public class AutoTrackHelper {
                     model.setTrack_title(activityTitle);
                 }
             }
-            // 3、获取当前页面
-            String screen_name = AutoTrackUtil.getScreenNameFromView(activity, expandableListView);
-            if (!TextUtils.isEmpty(screen_name)) {
-                model.setTrack_screen_name(screen_name);
-            }
 
-            // 4、获取ExpandableListView的控件名:ViewId
+            //3、获取当前大页面
+            String screen_name = AutoTrackUtil.getScreenName(activity);
+            model.setTrack_screen_name(screen_name);
+
+            // 4、获取当前页面
+
+            String subName = AutoTrackUtil.getScreenNameFromFragmentView(expandableListView);
+            model.setTrack_sub_screen_name(subName);
+
+            // 5、获取ExpandableListView的控件名:ViewId
             String idString = AutoTrackUtil.getViewId(expandableListView);
             if (!TextUtils.isEmpty(idString)) {
                 model.setTrack_element_id(idString);
             }
 
-            // 5、获取当前点击控件的索引位置
+            // 6、获取当前点击控件的索引位置
 
             model.setTrack_element_position(String.format(Locale.CHINA, "%d", groupPosition));
             model.setTrack_element_type("ExpandableListView");
             model.setFlag(Flag.l);
 
-            // 6、获取当前控件内容
+            // 7、获取当前控件内容
             try {
                 String viewText;
                 if (view instanceof ViewGroup) {
@@ -369,7 +378,7 @@ public class AutoTrackHelper {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            model.setM(StatisBusiness.Action.c.toString());
+//            model.setM(StatisBusiness.Action.c.toString());
 //            Log.d("自动埋点", "OnGroupClick:" + properties.toString());
             TrackLog.staticsUiEvent(model, model.getTrack_element_position());
         } catch (Exception e) {
@@ -407,21 +416,25 @@ public class AutoTrackHelper {
                     model.setTrack_title(activityTitle);
                 }
             }
-            // 3、获取当前页面
-            String screen_name = AutoTrackUtil.getScreenNameFromView(activity, expandableListView);
-            if (!TextUtils.isEmpty(screen_name)) {
-                model.setTrack_screen_name(screen_name);
-            }
 
-            // 4、获取ExpandableListView的控件名:ViewId
+            //3、获取当前大页面
+            String screen_name = AutoTrackUtil.getScreenName(activity);
+            model.setTrack_screen_name(screen_name);
+
+            // 4、获取当前页面
+
+            String subName = AutoTrackUtil.getScreenNameFromFragmentView(expandableListView);
+            model.setTrack_screen_name(subName);
+
+            // 5、获取ExpandableListView的控件名:ViewId
             String idString = AutoTrackUtil.getViewId(expandableListView);
             if (!TextUtils.isEmpty(idString)) {
                 model.setTrack_element_id(idString);
             }
 
-            // 5、获取当前点击控件的索引位置
+            // 6、获取当前点击控件的索引位置
             model.setTrack_element_position(String.format(Locale.CHINA, "%d:%d", groupPosition, childPosition));
-            // 6、控件的类型
+            // 7、控件的类型
             model.setTrack_element_type("ExpandableListView");
             model.setFlag(Flag.l);
 
@@ -448,7 +461,7 @@ public class AutoTrackHelper {
 
 
 //            Log.d("自动埋点", "OnChildClick:" + properties.toString());
-            model.setM(StatisBusiness.Action.c.toString());
+//            model.setM(StatisBusiness.Action.c.toString());
             TrackLog.staticsUiEvent(model, model.getTrack_element_position());
         } catch (Exception e) {
             e.printStackTrace();
@@ -485,22 +498,24 @@ public class AutoTrackHelper {
                 }
             }
 
-            // 3、获取当前页面
-            String screen_name = AutoTrackUtil.getScreenNameFromView(activity, adapterView);
-            if (!TextUtils.isEmpty(screen_name)) {
-                model.setTrack_screen_name(screen_name);
-            }
 
-            // 4、获取ExpandableListView的控件名:ViewId
+            //3、获取当前大页面
+            String screen_name = AutoTrackUtil.getScreenName(activity);
+            model.setTrack_screen_name(screen_name);
+            // 4、获取当前子页面
+            String subName = AutoTrackUtil.getScreenNameFromFragmentView(adapterView);
+            model.setTrack_sub_screen_name(subName);
+
+            // 5、获取ExpandableListView的控件名:ViewId
             String idString = AutoTrackUtil.getViewId(adapterView);
             if (!TextUtils.isEmpty(idString)) {
                 model.setTrack_element_id(idString);
             }
 
-            // 5、获取当前点击控件的索引位置
+            // 6、获取当前点击控件的索引位置
             model.setTrack_element_position(String.valueOf(position));
 
-            // 6、控件的类型
+            // 7、控件的类型
 //            properties.put(LogConstants.Autotrack.ELEMENT_TYPE, adapterView.getClass().getSimpleName());
             model.setTrack_element_type("list");
 
@@ -529,7 +544,7 @@ public class AutoTrackHelper {
             }
 
 //            Log.d("自动埋点", "onItemClick:" + properties.toString());
-            model.setM(StatisBusiness.Action.c.toString());
+//            model.setM(StatisBusiness.Action.c.toString());
             TrackLog.staticsUiEvent(model, model.getTrack_element_position());
 
         } catch (Exception e) {
@@ -633,7 +648,7 @@ public class AutoTrackHelper {
 
             // 3、获取当前页面信息，不一定获取得到
             if (activity != null) {
-                model.setTrack_screen_name(AutoTrackUtil.getScreenNameForActivity(activity));
+                model.setTrack_screen_name(AutoTrackUtil.getScreenName(activity));
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);
@@ -646,7 +661,7 @@ public class AutoTrackHelper {
             model.setFlag(Flag.b);
 
 //            Log.d("自动埋点", "onTabSelected:" + properties.toString());
-            model.setM(StatisBusiness.Action.c.toString());
+//            model.setM(StatisBusiness.Action.c.toString());
             TrackLog.staticsUiEvent(model, model.getTrack_element_position());
 
         } catch (Exception e) {
@@ -678,7 +693,7 @@ public class AutoTrackHelper {
 
             if (activity != null) {
                 // 1、获取当前页面
-                model.setTrack_screen_name(AutoTrackUtil.getScreenNameForActivity(activity));
+                model.setTrack_screen_name(AutoTrackUtil.getScreenName(activity));
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     // 2、获取Activity的标题名
@@ -711,8 +726,8 @@ public class AutoTrackHelper {
 
             Log.d("自动埋点", "onNavigationItemSelected:" + model.toString());
 
-            model.setM(StatisBusiness.Action.c.toString());
-            TrackLog.staticsUiEvent(model, model.getTrack_element_position());
+//            model.setM(StatisBusiness.Action.c.toString());
+            TrackLog.staticsUiEvent(model, null);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -742,19 +757,21 @@ public class AutoTrackHelper {
                 }
             }
 
-            // 2、获取当前页面
-            String screen_name = AutoTrackUtil.getScreenNameFromView(activity, view);
-            if (!TextUtils.isEmpty(screen_name)) {
-                model.setTrack_screen_name(screen_name);
-            }
 
-            // 3、获取RadioGroup的控件名
+            //2、获取当前大页面
+            String screen_name = AutoTrackUtil.getScreenName(activity);
+            model.setTrack_screen_name(screen_name);
+            // 3、获取当前子页面
+            String subName = AutoTrackUtil.getScreenNameFromFragmentView(view);
+            model.setTrack_sub_screen_name(subName);
+
+            // 4、获取RadioGroup的控件名
             String idString = AutoTrackUtil.getViewId(view);
             if (!TextUtils.isEmpty(idString)) {
                 model.setTrack_element_id(idString);
             }
 
-            // 4、控件的类型
+            // 5、控件的类型
             model.setTrack_element_type("RadioButton");
 
             model.setFlag(Flag.b);
@@ -789,8 +806,8 @@ public class AutoTrackHelper {
 
 //            Log.d("自动埋点", "onNavigationItemSelected:" + properties.toString());
 
-            model.setM(StatisBusiness.Action.c.toString());
-            TrackLog.staticsUiEvent(model, model.getTrack_element_position());
+//            model.setM(StatisBusiness.Action.c.toString());
+            TrackLog.staticsUiEvent(model, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -832,7 +849,7 @@ public class AutoTrackHelper {
 
             if (activity != null) {
                 // 1、获取当前页面
-                model.setTrack_screen_name(AutoTrackUtil.getScreenNameForActivity(activity));
+                model.setTrack_screen_name(AutoTrackUtil.getScreenName(activity));
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     // 2、获取Activity的标题名
@@ -884,7 +901,7 @@ public class AutoTrackHelper {
             }
 
 //            Log.d("自动埋点", "trackDialog:" + properties.toString());
-            model.setM(StatisBusiness.Action.c.toString());
+//            model.setM(StatisBusiness.Action.c.toString());
             TrackLog.staticsUiEvent(model, null);
         } catch (Exception e) {
             e.printStackTrace();
@@ -962,17 +979,18 @@ public class AutoTrackHelper {
                     model.setTrack_title(activityTitle);
                 }
             }
-            // 3、获取当前页面
+            //3、获取当前大页面
+            String screen_name = AutoTrackUtil.getScreenName(activity);
+            model.setTrack_screen_name(screen_name);
+            // 4、获取当前子页面
             if (TextUtils.isEmpty(screen)) {
-                String screen_name = AutoTrackUtil.getScreenNameFromView(activity, view);
-                if (!TextUtils.isEmpty(screen_name)) {
-                    model.setTrack_screen_name(screen_name);
-                }
+                String subName = AutoTrackUtil.getScreenNameFromFragmentView(view);
+                model.setTrack_sub_screen_name(subName);
             } else {
-                model.setTrack_screen_name(screen);
+                model.setTrack_sub_screen_name(screen);
             }
 
-            // 4、获取ExpandableListView的控件名:ViewId
+            // 5、获取ExpandableListView的控件名:ViewId
             String idString = AutoTrackUtil.getViewId(view);
             if (!TextUtils.isEmpty(idString)) {
                 model.setTrack_element_id(idString);
@@ -1026,8 +1044,8 @@ public class AutoTrackHelper {
 //            }
 
 //            Log.d("自动埋点", "trackViewOnClick:" + properties.toString());
-            model.setM(StatisBusiness.Action.c.toString());
-            TrackLog.staticsUiEvent(model, model.getTrack_element_position());
+//            model.setM(StatisBusiness.Action.c.toString());
+            TrackLog.staticsUiEvent(model, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -1057,18 +1075,18 @@ public class AutoTrackHelper {
             if (activity == null || !(activity instanceof HookActivityDelegate)) {
                 return;
             }
-            if (activity != null) {
-                AutoTrackModel model = new AutoTrackModel();
-                String activityTitle = AutoTrackUtil.getActivityTitle(activity);
-                if (!TextUtils.isEmpty(activityTitle)) {
-                    model.setTrack_title(activityTitle);
-                }
-                String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenNameForActivity(activity));
-                model.setTrack_screen_name(screenName);
-                model.setM(StatisBusiness.Action.i.toString());
-                model.setFlag(Flag.p);
-                TrackLog.staticsUiEvent(model, null);
-            }
+//            if (activity != null) {
+//                AutoTrackModel model = new AutoTrackModel();
+//                String activityTitle = AutoTrackUtil.getActivityTitle(activity);
+//                if (!TextUtils.isEmpty(activityTitle)) {
+//                    model.setTrack_title(activityTitle);
+//                }
+//                String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenNameForActivity(activity));
+//                model.setTrack_screen_name(screenName);
+//                model.setM(StatisBusiness.Action.i.toString());
+//                model.setFlag(Flag.p);
+//                TrackLog.staticsUiEvent(model, null);
+//            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -1088,7 +1106,7 @@ public class AutoTrackHelper {
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);
                 }
-                String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenNameForActivity(activity));
+                String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenName(activity));
                 model.setTrack_screen_name(screenName);
                 model.setM(StatisBusiness.Action.i.toString());
                 model.setFlag(Flag.p);
@@ -1149,7 +1167,7 @@ public class AutoTrackHelper {
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);
                 }
-                String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenNameForActivity(activity));
+                String screenName = String.format(Locale.CHINA, "%s", AutoTrackUtil.getScreenName(activity));
                 model.setTrack_screen_name(screenName);
 //                Log.d("自动埋点", "trackActivityAppViewScreenDestory:" + properties.toString());
                 model.setM(StatisBusiness.Action.o.toString());

@@ -8,16 +8,45 @@ package com.mampod.track.sdk.model;
  * @date: 2020/11/18 下午2:43
  */
 public class AutoTrackModel {
+    private String random_id;  //6位随机数
+    private int order_num;  //顺序数
+    private Flag flag;  //消息类型
+    private String track_screen_name; //大页面
+    private String track_sub_screen_name; // 小界面
+    private String track_element_content; //控件内容
+    private String track_element_position; //索引（仅list）
+
+
     private String track_title;
-    private String track_screen_name;
     private String track_element_id;
     private String track_element_type;
-    private String track_element_content;
-    private String track_element_position;
     private String track_element_viewpath;
     private String m;  //标记类型{i:页面进入;o：页面退出;c：点击}
 
-    private Flag flag;  //标识
+
+    public String getRandom_id() {
+        return random_id;
+    }
+
+    public void setRandom_id(String random_id) {
+        this.random_id = random_id;
+    }
+
+    public int getOrder_num() {
+        return order_num;
+    }
+
+    public void setOrder_num(int order_num) {
+        this.order_num = order_num;
+    }
+
+    public String getTrack_sub_screen_name() {
+        return track_sub_screen_name;
+    }
+
+    public void setTrack_sub_screen_name(String track_sub_screen_name) {
+        this.track_sub_screen_name = track_sub_screen_name;
+    }
 
     public String getTrack_screen_name() {
         return track_screen_name;

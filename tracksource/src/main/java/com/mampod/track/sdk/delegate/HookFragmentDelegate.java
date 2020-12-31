@@ -58,7 +58,7 @@ public abstract class HookFragmentDelegate extends ImmersionFragment implements 
     @Override
     public void onVisible() {
         super.onVisible();
-        onFragmentShow(true, null, AutoTrackUtil.getRoutersData(this));
+        onFragmentShow(true, null, AutoTrackUtil.getScreenName(this));
     }
 
     /**

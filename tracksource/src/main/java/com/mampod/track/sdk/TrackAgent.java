@@ -201,7 +201,7 @@ public class TrackAgent {
             commonInfo.setPk(ChannelUtil.getPackageName(parm.context));
             parm.setCommonInfo(commonInfo);
             //动态随机8位
-            parm.setR(RandomUtil.generateNumber2());
+            parm.setR(RandomUtil.generateNumber2(8));
             Log.i(TAG, "统计上报公共参数装配成功:" + commonInfo.toString());
         }
     }

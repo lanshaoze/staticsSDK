@@ -132,16 +132,8 @@ public class LogMethodVisitor extends AdviceAdapter {
         if (isPageEnter) {
             if (methodDesc == '(Landroid/os/Bundle;)V') {
                 methodVisitor.visitVarInsn(ALOAD, 0)
-                methodVisitor.visitMethodInsn(INVOKESTATIC, LogHookConfig.LOG_ANALYTICS_BASE, "trackActivityResume", "(Landroid/app/Activity;)V", false)
-                isHasTracked = true
-                return
-            }
-        }
-
-        if (isPageExit) {
-            if (methodDesc == '()V') {
-                methodVisitor.visitVarInsn(ALOAD, 0)
-                methodVisitor.visitMethodInsn(INVOKESTATIC, LogHookConfig.LOG_ANALYTICS_BASE, "trackActivityDestroy", "(Landroid/app/Activity;)V", false)
+                methodVisitor.visitVarInsn(ALOAD, 1)
+                methodVisitor.visitMethodInsn(INVOKESTATIC, LogHookConfig.LOG_ANALYTICS_BASE, "trackActivityCreate", "(Landroid/app/Activity;Landroid/os/Bundle;)V", false)
                 isHasTracked = true
                 return
             }
@@ -156,10 +148,20 @@ public class LogMethodVisitor extends AdviceAdapter {
             }
         }
 
+
         if (isPageStop) {
             if (methodDesc == '()V') {
                 methodVisitor.visitVarInsn(ALOAD, 0)
                 methodVisitor.visitMethodInsn(INVOKESTATIC, LogHookConfig.LOG_ANALYTICS_BASE, "trackActivityStop", "(Landroid/app/Activity;)V", false)
+                isHasTracked = true
+                return
+            }
+        }
+
+        if (isPageExit) {
+            if (methodDesc == '()V') {
+                methodVisitor.visitVarInsn(ALOAD, 0)
+                methodVisitor.visitMethodInsn(INVOKESTATIC, LogHookConfig.LOG_ANALYTICS_BASE, "trackActivityDestroy", "(Landroid/app/Activity;)V", false)
                 isHasTracked = true
                 return
             }
@@ -318,7 +320,7 @@ public class LogMethodVisitor extends AdviceAdapter {
             Logger.info("||发现 ${methodName}${methodDesc} 有注解 @SubPageOpen")
         }
 
-        if (s == 'Lcom/mampod/track/sdk/annotation/PageResume;') {
+        if (s == 'Lcom/mampod/track/sdk/annotation/PageOpen;') {
             isPageEnter = true
             Logger.info("||发现 ${methodName}${methodDesc} 有注解 @PageOpen")
         }

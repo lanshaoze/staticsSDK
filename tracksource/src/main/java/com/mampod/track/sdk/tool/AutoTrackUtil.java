@@ -486,6 +486,7 @@ public class AutoTrackUtil {
         }
     }
 
+
     /**
      * 获取路径信息
      *
@@ -493,45 +494,48 @@ public class AutoTrackUtil {
      * @return
      */
     public static String getRoutersData(Object o) {
-        if (o == null) return "";
+        if (o == null) return UNKONW;
         String des = "";
         if (o instanceof HookFragmentDelegate) {
-            ArrayList<String> fs = new ArrayList<>();
-            if (TextUtils.isEmpty(((HookFragmentDelegate) o).getDes())) {
-//                fs.add(getClassName(o));
-                fs.add(UNKONW);
-            } else {
-                fs.add(((HookFragmentDelegate) o).getDes());
-            }
-            StringBuilder e = new StringBuilder();
-            while (((HookFragmentDelegate) o).getParentFragment() != null) {
-                o = ((HookFragmentDelegate) o).getParentFragment();
-                if (!TextUtils.isEmpty(((HookFragmentDelegate) o).getDes())) {
-                    fs.add(((HookFragmentDelegate) o).getDes());
-                } else {
-                    fs.add(UNKONW);
-//                    fs.add(getClassName(o));
-                }
-            }
 
-            if (((HookFragmentDelegate) o).getActivity() != null && ((HookFragmentDelegate) o).getActivity() instanceof HookActivityDelegate) {
-                HookActivityDelegate avActivity = (HookActivityDelegate) ((HookFragmentDelegate) o).getActivity();
-                if (!TextUtils.isEmpty(avActivity.getDes())) {
-                    fs.add(avActivity.getDes());
-                } else {
-                    fs.add(UNKONW);
-//                    fs.add(getClassName(avActivity));
-                }
-            }
-
-            for (int i = fs.size() - 1; i >= 0; i--) {
-                if (i == 0) {
-                    e.append(fs.get(i));
-                } else {
-                    e.append(fs.get(i)).append("|");
-                }
-            }
-            des = e.toString();
+            HookFragmentDelegate avFragment = (HookFragmentDelegate) o;
+            des = avFragment.getDes();
+//            ArrayList<String> fs = new ArrayList<>();
+//            if (TextUtils.isEmpty(((HookFragmentDelegate) o).getDes())) {
+////                fs.add(getClassName(o));
+//                fs.add(UNKONW);
+//            } else {
+//                fs.add(((HookFragmentDelegate) o).getDes());
+//            }
+//            StringBuilder e = new StringBuilder();
+//            while (((HookFragmentDelegate) o).getParentFragment() != null) {
+//                o = ((HookFragmentDelegate) o).getParentFragment();
+//                if (!TextUtils.isEmpty(((HookFragmentDelegate) o).getDes())) {
+//                    fs.add(((HookFragmentDelegate) o).getDes());
+//                } else {
+//                    fs.add(UNKONW);
+////                    fs.add(getClassName(o));
+//                }
+//            }
+//
+//            if (((HookFragmentDelegate) o).getActivity() != null && ((HookFragmentDelegate) o).getActivity() instanceof HookActivityDelegate) {
+//                HookActivityDelegate avActivity = (HookActivityDelegate) ((HookFragmentDelegate) o).getActivity();
+//                if (!TextUtils.isEmpty(avActivity.getDes())) {
+//                    fs.add(avActivity.getDes());
+//                } else {
+//                    fs.add(UNKONW);
+////                    fs.add(getClassName(avActivity));
+//                }
+//            }
+//
+//            for (int i = fs.size() - 1; i >= 0; i--) {
+//                if (i == 0) {
+//                    e.append(fs.get(i));
+//                } else {
+//                    e.append(fs.get(i)).append("|");
+//                }
+//            }
+//            des = e.toString();
         } else if (o instanceof HookActivityDelegate) {
             HookActivityDelegate avActivity = (HookActivityDelegate) o;
             des = avActivity.getDes();
@@ -584,5 +588,59 @@ public class AutoTrackUtil {
 
     private static final SimpleDateFormat mDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"
             + ".SSS", Locale.getDefault());
+
+
+    /**
+     * 根据类型获取界面名称
+     *
+     * @param o
+     * @return
+     */
+    public static String getScreenName(Object o) {
+        if (o == null) return UNKONW;
+        String des = "";
+        if (o instanceof HookFragmentDelegate) {
+
+            HookFragmentDelegate avFragment = (HookFragmentDelegate) o;
+            des = avFragment.getDes();
+        } else if (o instanceof HookActivityDelegate) {
+            HookActivityDelegate avActivity = (HookActivityDelegate) o;
+            des = avActivity.getDes();
+        }
+
+        if (TextUtils.isEmpty(des)) {
+            des = UNKONW;
+        }
+
+        return des;
+    }
+
+
+    /**
+     * 获取Fragment中View对应界面名称
+     *
+     * @param view
+     * @return
+     */
+    public static String getScreenNameFromFragmentView(View view) {
+        try {
+            if (view != null) {
+                String screenName = "";
+                Object fragment = view.getTag(R.id.auto_track_tag_view_fragment_name);
+                if (fragment != null && fragment instanceof HookFragmentDelegate) {
+                    screenName = AutoTrackUtil.getScreenName(fragment);
+                    if (TextUtils.isEmpty(screenName)) {
+                        screenName = UNKONW;
+                    }
+                }
+
+                return screenName;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
 
 }
