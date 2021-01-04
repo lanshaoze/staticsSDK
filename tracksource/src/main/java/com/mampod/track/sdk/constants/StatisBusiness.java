@@ -61,7 +61,8 @@ public class StatisBusiness {
         cfg2,// app特征
         l,  //list
         b, //按钮
-        p  //页面
+        p,  //页面
+        at //UI事件
 
     }
 

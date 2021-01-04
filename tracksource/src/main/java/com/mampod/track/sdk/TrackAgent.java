@@ -27,6 +27,7 @@ import java.util.TreeMap;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
+
 /**
  * 事件上报代理类
  *
@@ -69,7 +70,7 @@ public class TrackAgent {
     }
 
     public TrackAgent() {
-        baseUrl = "http://tc.ergedd.com/app.gif?";
+//        baseUrl = "http://tc.ergedd.com/app.gif?";
     }
 
     public EventParam getP() {
@@ -107,6 +108,10 @@ public class TrackAgent {
         try {
             if (TextUtils.isEmpty(P.getA())) {
                 Log.d(TAG, "no appid");
+                return;
+            }
+            if (TextUtils.isEmpty(baseUrl)) {
+                Log.d(TAG, "no server url");
                 return;
             }
             // 1. 装配数据

@@ -77,7 +77,7 @@ public class TrackSDK {
     public void init(String appId) {
 
         try {
-            if (P == null || TextUtils.isEmpty(appId)) return;
+            if (P == null) return;
             new TrackAgent.EventConfBuilder(P.context)
                     .configUrl(P.proxUrl)
                     .configAppid(appId)

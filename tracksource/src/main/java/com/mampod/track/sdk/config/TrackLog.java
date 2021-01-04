@@ -20,27 +20,30 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @date:
  */
 public class TrackLog {
+    //访问序号
     private static AtomicInteger mOrderNum = new AtomicInteger();
+    //随机数
+    private static String randomId = RandomUtil.generateNumber2(6);
 
     /**
      * 统计app启动
      */
     protected static void staticsInit() {
-        TrackAgent.getInstance().onEvent(StatisBusiness.Scene.sys, StatisBusiness.Event.init, null, null);
+//        TrackAgent.getInstance().onEvent(StatisBusiness.Scene.sys, StatisBusiness.Event.init, null, null);
     }
 
     /**
      * 统计app使用时长
      */
     protected static void staticsAppDelay() {
-        try {
-            Long delayTime = System.currentTimeMillis() - (TrackSDK.getInstance().getP().initTime);
-            StringBuilder e = new StringBuilder();
-            e.append("v=").append(delayTime / 1000);
-            TrackAgent.getInstance().onEvent(StatisBusiness.Scene.sys, StatisBusiness.Event.duration, StatisBusiness.Action.d, e.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Long delayTime = System.currentTimeMillis() - (TrackSDK.getInstance().getP().initTime);
+//            StringBuilder e = new StringBuilder();
+//            e.append("v=").append(delayTime / 1000);
+//            TrackAgent.getInstance().onEvent(StatisBusiness.Scene.sys, StatisBusiness.Event.duration, StatisBusiness.Action.d, e.toString());
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
 
@@ -64,7 +67,7 @@ public class TrackLog {
             }
 
             //6位随机数
-            event.setRandom_id(RandomUtil.generateNumber2(6));
+            event.setRandom_id(randomId);
             //增加顺序号
             event.setOrder_num(mOrderNum.incrementAndGet());
 
@@ -78,9 +81,9 @@ public class TrackLog {
             l2.append(event.getRandom_id()).append("#")
                     .append(event.getOrder_num()).append("#")
                     .append(event.getFlag()).append("#")
-                    .append(event.getTrack_screen_name()).append("#")
-                    .append(event.getTrack_sub_screen_name()).append("#")
-                    .append(content).append("#")
+                    .append(!TextUtils.isEmpty(event.getTrack_screen_name()) ? event.getTrack_screen_name() : "").append("#")
+                    .append(!TextUtils.isEmpty(event.getTrack_sub_screen_name()) ? event.getTrack_sub_screen_name() : "").append("#")
+                    .append(!TextUtils.isEmpty(content) ? content : "").append("#")
                     .append(event.getFlag() == Flag.l ? event.getTrack_element_position() : "");
 
 //            if (event.getFlag() != null) {
@@ -107,11 +110,10 @@ public class TrackLog {
 
 
             StringBuilder e = new StringBuilder();
-            e.append("l1=").append("at")
-                    .append("&l2=").append(l2);
-            if (!TextUtils.isEmpty(extra)) {
-                e.append("&l3=").append(extra);
-            }
+            e.append("t=").append(l2);
+//            if (!TextUtils.isEmpty(extra)) {
+//                e.append("&l3=").append(extra);
+//            }
 
             String rl = e.toString().toLowerCase();
             if (rl.length() > 300) {
@@ -119,7 +121,7 @@ public class TrackLog {
             }
 
 
-            TrackAgent.getInstance().onEvent(StatisBusiness.Scene.ui, StatisBusiness.Event.v1, StatisBusiness.Action.v, rl);
+            TrackAgent.getInstance().onEvent(StatisBusiness.Scene.ui, StatisBusiness.Event.at, null, rl);
 
 //            Map properties = new HashMap();
 //            properties.put(LogConstants.Autotrack.SCREEN_NAME, event.getTrack_screen_name());
