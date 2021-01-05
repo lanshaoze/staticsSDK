@@ -38,7 +38,8 @@ import okhttp3.Response;
 public class TrackAgent {
 
     private static final String TAG = TrackAgent.class.getSimpleName();
-
+    //随机数
+    private String randomId;
     /**
      * 采用弱引用来回收单例对象
      */
@@ -69,8 +70,13 @@ public class TrackAgent {
         return Inner.agent;
     }
 
+    public String getRandomId() {
+        return randomId;
+    }
+
     public TrackAgent() {
 //        baseUrl = "http://tc.ergedd.com/app.gif?";
+        randomId = RandomUtil.generateNumber2(6);
     }
 
     public EventParam getP() {
@@ -205,8 +211,8 @@ public class TrackAgent {
             commonInfo.setN(NetStateUtils.getNetWorkStatusInfo(parm.context).getmType());
             commonInfo.setPk(ChannelUtil.getPackageName(parm.context));
             parm.setCommonInfo(commonInfo);
-            //动态随机8位
-            parm.setR(RandomUtil.generateNumber2(8));
+            //动态随机6位
+            parm.setR(getInstance().getRandomId());
             Log.i(TAG, "统计上报公共参数装配成功:" + commonInfo.toString());
         }
     }
@@ -231,7 +237,7 @@ public class TrackAgent {
 
         private String g; // 签名
 
-        private String r; // 随机8位数
+        private String r; // 随机6位数
 
         public void setT(Long t) {
             this.t = t;

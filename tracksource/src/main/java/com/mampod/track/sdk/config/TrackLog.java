@@ -22,8 +22,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class TrackLog {
     //访问序号
     private static AtomicInteger mOrderNum = new AtomicInteger();
-    //随机数
-    private static String randomId = RandomUtil.generateNumber2(6);
 
     /**
      * 统计app启动
@@ -67,7 +65,7 @@ public class TrackLog {
             }
 
             //6位随机数
-            event.setRandom_id(randomId);
+            event.setRandom_id(TrackAgent.getInstance().getRandomId());
             //增加顺序号
             event.setOrder_num(mOrderNum.incrementAndGet());
 
