@@ -75,7 +75,8 @@ public class TrackLog {
 
             String content = event.getFlag() == Flag.p ? event.getM() :
                     (event.getFlag() == Flag.l ? (TextUtils.isEmpty(event.getTrack_element_id()) ? "" : event.getTrack_element_id()) :
-                            event.getTrack_element_id() + (TextUtils.isEmpty(event.getTrack_element_content()) ? "" : ("|" + event.getTrack_element_content())));
+                            (!TextUtils.isEmpty(event.getTrack_element_id()) ? event.getTrack_element_id() : "") +
+                                    (TextUtils.isEmpty(event.getTrack_element_content()) ? "" : ((!TextUtils.isEmpty(event.getTrack_element_id()) ? "|" : "") + event.getTrack_element_content())));
 
 
             l2.append(event.getRandom_id()).append("#")

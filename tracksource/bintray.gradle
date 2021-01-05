@@ -7,7 +7,7 @@ def siteUrl = 'https://gitee.com/forestye/statics-sdk'    // project homepage
 def gitUrl = 'https://gitee.com/forestye/statics-sdk.git' // project git
 
 // 根节点添加
-version = "0.0.0.6-snapshot"
+version = "0.0.0.7-snapshot"
 //发布到组织名称名字，必须填写
 group = "com.mampod.track"
 //发布到JCenter上的项目名字，必须填写
