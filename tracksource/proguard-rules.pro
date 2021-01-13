@@ -78,14 +78,7 @@
 -keep class com.pddstudio.preferences.encrypted.**{*;}
 
 
--keep class com.mampod.track.sdk.model.** {
-      *;
-}
--keep class com.mampod.track.sdk.TrackAgent{
-      *;
-}
-
--keep class com.mampod.track.sdk.config.**{
+-keep class com.mampod.track.sdk.** {
       *;
 }
 
