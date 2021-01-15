@@ -31,7 +31,6 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 
 
-
 /**
  * 日志上报请求类
  *
@@ -72,9 +71,11 @@ public class LogReport {
     }
 
     public static LogReport getInstance() {
-        synchronized (LogReport.class) {
-            if (manager == null) {
-                return new LogReport();
+        if (manager == null) {
+            synchronized (LogReport.class) {
+                if (manager == null) {
+                    return new LogReport();
+                }
             }
         }
         return manager;
