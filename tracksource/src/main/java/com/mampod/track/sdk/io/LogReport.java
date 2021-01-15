@@ -74,7 +74,7 @@ public class LogReport {
         if (manager == null) {
             synchronized (LogReport.class) {
                 if (manager == null) {
-                    return new LogReport();
+                    manager = new LogReport();
                 }
             }
         }
