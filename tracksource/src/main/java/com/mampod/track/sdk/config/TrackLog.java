@@ -70,11 +70,16 @@ public class TrackLog {
             event.setOrder_num(mOrderNum.incrementAndGet());
 
             StringBuilder l2 = new StringBuilder();
+            String mContent = event.getTrack_element_content();
+            //限制按钮文本长度
+            if (!TextUtils.isEmpty(mContent) && mContent.length() > 20) {
+                mContent = mContent.substring(0, 20);
+            }
 
             String content = event.getFlag() == Flag.p ? event.getM() :
                     (event.getFlag() == Flag.l ? (TextUtils.isEmpty(event.getTrack_element_id()) ? "" : event.getTrack_element_id()) :
                             (!TextUtils.isEmpty(event.getTrack_element_id()) ? event.getTrack_element_id() : "") +
-                                    (TextUtils.isEmpty(event.getTrack_element_content()) ? "" : ((!TextUtils.isEmpty(event.getTrack_element_id()) ? "|" : "") + event.getTrack_element_content())));
+                                    (TextUtils.isEmpty(mContent) ? "" : ((!TextUtils.isEmpty(event.getTrack_element_id()) ? "|" : "") + mContent)));
 
 
             l2.append(event.getRandom_id()).append("#")
@@ -115,8 +120,8 @@ public class TrackLog {
 //            }
 
             String rl = e.toString().toLowerCase();
-            if (rl.length() > 300) {
-                rl = rl.substring(0, 300);
+            if (rl.length() > 500) {
+                rl = rl.substring(0, 500);
             }
 
 
