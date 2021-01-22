@@ -112,7 +112,7 @@ public class TrackAgent {
     public synchronized void onEvent(StatisBusiness.Scene p, StatisBusiness.Event k, StatisBusiness.Action m, String e) {
 
         try {
-            if (TextUtils.isEmpty(P.getA())) {
+            if (P == null || TextUtils.isEmpty(P.getA())) {
                 Log.d(TAG, "no appid");
                 return;
             }
