@@ -1,7 +1,9 @@
 package com.mampod.track.sdk;
 
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -12,6 +14,7 @@ import com.mampod.track.sdk.tool.AppUtils;
 import com.mampod.track.sdk.tool.ChannelUtil;
 import com.mampod.track.sdk.tool.DeviceUtils;
 import com.mampod.track.sdk.tool.NetStateUtils;
+import com.mampod.track.sdk.tool.PromptUtil;
 import com.mampod.track.sdk.tool.PropertyUtil;
 import com.mampod.track.sdk.annotation.Transient;
 import com.mampod.track.sdk.tool.RandomUtil;
@@ -109,7 +112,7 @@ public class TrackAgent {
      * @param m
      * @param e
      */
-    public synchronized void onEvent(StatisBusiness.Scene p, StatisBusiness.Event k, StatisBusiness.Action m, String e) {
+    public synchronized void onEvent(Context context, StatisBusiness.Scene p, StatisBusiness.Event k, StatisBusiness.Action m, String e) {
 
         try {
             if (P == null || TextUtils.isEmpty(P.getA())) {
@@ -135,6 +138,8 @@ public class TrackAgent {
             Log.e(TAG, "log:\n" + "p=" + p + "\n&k=" + k + "\n&m=" + m + "\n&e=" + e + "\n&a=" + P.a + "\n&g=" + P.g + "\n&t=" + P.t + "\n&r=" + P.r);
             Log.e(TAG, "最终拼接：" + proty);
             pushServer(proty);
+            if (context == null || !(context instanceof Activity)) return;
+            PromptUtil.showPromptDialog((Activity) context, "p=" + p + "\n&k=" + k + "\n&m=" + m + "\n&e=" + e + "\n&a=" + P.a + "\n&g=" + P.g + "\n&t=" + P.t + "\n&r=" + P.r);
         } catch (Exception e1) {
             e1.printStackTrace();
         }

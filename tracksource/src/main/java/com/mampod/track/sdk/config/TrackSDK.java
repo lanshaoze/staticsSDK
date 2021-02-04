@@ -17,6 +17,16 @@ import java.lang.ref.WeakReference;
  */
 public class TrackSDK {
 
+    private boolean isShowLog = false;
+
+    public boolean isShowLog() {
+        return isShowLog;
+    }
+
+    public void setShowLog(boolean showLog) {
+        isShowLog = showLog;
+    }
+
     /**
      * 采用弱引用来回收单例对象
      */

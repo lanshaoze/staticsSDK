@@ -1,5 +1,6 @@
 package com.mampod.track.sdk.config;
 
+import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -125,7 +126,7 @@ public class TrackLog {
             }
 
 
-            TrackAgent.getInstance().onEvent(StatisBusiness.Scene.ui, StatisBusiness.Event.at, null, rl);
+            TrackAgent.getInstance().onEvent(event.getmContext(), StatisBusiness.Scene.ui, StatisBusiness.Event.at, null, rl);
 
 //            Map properties = new HashMap();
 //            properties.put(LogConstants.Autotrack.SCREEN_NAME, event.getTrack_screen_name());
@@ -159,7 +160,7 @@ public class TrackLog {
      * @param event
      * @param extra
      */
-    public static void staticsCommonEvent(String event, String extra) {
+    public static void staticsCommonEvent(Context context,String event, String extra) {
         if (TextUtils.isEmpty(event)) return;
         try {
 
@@ -174,7 +175,7 @@ public class TrackLog {
             if (rl.length() > 300) {
                 rl = rl.substring(0, 300);
             }
-            TrackAgent.getInstance().onEvent(StatisBusiness.Scene.point, StatisBusiness.Event.v1, StatisBusiness.Action.v, rl);
+            TrackAgent.getInstance().onEvent(context,StatisBusiness.Scene.point, StatisBusiness.Event.v1, StatisBusiness.Action.v, rl);
         } catch (Exception e) {
             e.printStackTrace();
         }

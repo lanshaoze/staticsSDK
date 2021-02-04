@@ -288,6 +288,7 @@ public class AutoTrackHelper {
             AutoTrackModel model = new AutoTrackModel();
             String activityTitle = null;
             if (activity != null) {
+                model.setmContext(activity);
                 activityTitle = AutoTrackUtil.getActivityTitle(activity);
             }
             if (!TextUtils.isEmpty(activityTitle)) {
@@ -331,6 +332,7 @@ public class AutoTrackHelper {
 
             // 2、获取Activity的标题名
             if (activity != null) {
+                model.setmContext(activity);
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);
@@ -411,6 +413,7 @@ public class AutoTrackHelper {
 
             // 2、获取Activity的标题名
             if (activity != null) {
+                model.setmContext(activity);
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);
@@ -483,7 +486,6 @@ public class AutoTrackHelper {
             Activity activity = AutoTrackUtil.getActivityFromView(view);
 
             AutoTrackModel model = new AutoTrackModel();
-
             // 1、获取当前点击控件的全路径
             String viewPath = AutoTrackUtil.getViewPath(view);
             if (!TextUtils.isEmpty(viewPath)) {
@@ -492,6 +494,7 @@ public class AutoTrackHelper {
 
             // 2、获取Activity的标题名
             if (activity != null) {
+                model.setmContext(activity);
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);
@@ -648,6 +651,7 @@ public class AutoTrackHelper {
 
             // 3、获取当前页面信息，不一定获取得到
             if (activity != null) {
+                model.setmContext(activity);
                 model.setTrack_screen_name(AutoTrackUtil.getScreenName(activity));
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
@@ -692,6 +696,7 @@ public class AutoTrackHelper {
             AutoTrackModel model = new AutoTrackModel();
 
             if (activity != null) {
+                model.setmContext(activity);
                 // 1、获取当前页面
                 model.setTrack_screen_name(AutoTrackUtil.getScreenName(activity));
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
@@ -751,6 +756,7 @@ public class AutoTrackHelper {
 
             // 1、获取Activity的标题名
             if (activity != null) {
+                model.setmContext(activity);
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);
@@ -848,6 +854,7 @@ public class AutoTrackHelper {
             AutoTrackModel model = new AutoTrackModel();
 
             if (activity != null) {
+                model.setmContext(activity);
                 // 1、获取当前页面
                 model.setTrack_screen_name(AutoTrackUtil.getScreenName(activity));
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
@@ -966,6 +973,7 @@ public class AutoTrackHelper {
 
             AutoTrackModel model = new AutoTrackModel();
 
+
             // 1、获取当前点击控件的全路径
             String viewPath = AutoTrackUtil.getViewPath(view);
             if (!TextUtils.isEmpty(viewPath)) {
@@ -974,6 +982,7 @@ public class AutoTrackHelper {
 
             // 2、获取Activity的标题名
             if (activity != null) {
+                model.setmContext(activity);
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);
@@ -1102,6 +1111,7 @@ public class AutoTrackHelper {
             }
             if (activity != null) {
                 AutoTrackModel model = new AutoTrackModel();
+                model.setmContext(activity);
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);
@@ -1163,6 +1173,7 @@ public class AutoTrackHelper {
             if (activity == null || !(activity instanceof HookActivityDelegate)) return;
             if (activity != null) {
                 AutoTrackModel model = new AutoTrackModel();
+                model.setmContext(activity);
                 String activityTitle = AutoTrackUtil.getActivityTitle(activity);
                 if (!TextUtils.isEmpty(activityTitle)) {
                     model.setTrack_title(activityTitle);

@@ -1,5 +1,7 @@
 package com.mampod.track.sdk.model;
 
+import android.content.Context;
+
 /**
  * 统计上报数据模型
  *
@@ -8,6 +10,7 @@ package com.mampod.track.sdk.model;
  * @date: 2020/11/18 下午2:43
  */
 public class AutoTrackModel {
+    private Context mContext;
     private String random_id;  //6位随机数
     private int order_num;  //顺序数
     private Flag flag;  //消息类型
@@ -23,6 +26,13 @@ public class AutoTrackModel {
     private String track_element_viewpath;
     private String m;  //标记类型{i:页面进入;o：页面退出;c：点击}
 
+    public Context getmContext() {
+        return mContext;
+    }
+
+    public void setmContext(Context mContext) {
+        this.mContext = mContext;
+    }
 
     public String getRandom_id() {
         return random_id;
