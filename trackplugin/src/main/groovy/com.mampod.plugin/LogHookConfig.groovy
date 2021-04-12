@@ -145,12 +145,12 @@ public class LogHookConfig {
     public final
     static HashMap<String, LogMethodCell> sAdapterMethods = new HashMap<>()
     static {
-        sAdapterMethods.put('onBindViewHolder(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V', new LogMethodCell(
+        sAdapterMethods.put('onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V', new LogMethodCell(
                 'onBindViewHolder',
-                '(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V',
-                'android/support/v7/widget/RecyclerView$Adapter',
+                '(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V',
+                'androidx/recyclerview/widget/RecyclerView$Adapter',
                 'trackAdaperHolder',
-                '(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V',
+                '(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V',
                 1, 2,
                 [Opcodes.ALOAD, Opcodes.ILOAD]
         ))
