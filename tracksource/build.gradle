@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+//增加kotlin插件支持
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     buildToolsVersion '28.0.3'
@@ -58,6 +61,8 @@ dependencies {
 
     //okhttp3
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
 }
 
