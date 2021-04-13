@@ -10,10 +10,13 @@ group='com.mampod.track'
 //    options.encoding = "UTF-8"
 //}
 
-repositories {
-    jcenter()
-    mavenCentral()
-}
+//repositories {
+//    jcenter()
+//    mavenCentral()
+//    maven {
+//        url 'https://jitpack.io'
+//    }
+//}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
