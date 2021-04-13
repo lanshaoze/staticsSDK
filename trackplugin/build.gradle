@@ -1,7 +1,9 @@
 apply plugin: 'java'
-apply plugin: 'maven'
+//apply plugin: 'maven'
 apply plugin: 'groovy'
-
+//apply plugin: 'maven'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.mampod.track'
 //compileGroovy {
 //    sourceCompatibility = 1.7
 //    targetCompatibility = 1.7
@@ -58,7 +60,7 @@ dependencies {
     sign configurations.archives
 }*/
 
-apply from:'bintray.gradle'
+//apply from:'bintray.gradle'
 
 
 

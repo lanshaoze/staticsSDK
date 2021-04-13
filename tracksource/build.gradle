@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
+//apply plugin: 'maven'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.mampod.track'
 //增加kotlin插件支持
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -91,6 +93,6 @@ dependencies {
 //    }
 //}
 
-apply from: 'bintray.gradle'
+//apply from: 'bintray.gradle'
 
 
