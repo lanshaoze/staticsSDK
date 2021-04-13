@@ -28,7 +28,7 @@ dependencies {
     implementation localGroovy()
     implementation 'org.ow2.asm:asm:9.0'
     implementation 'org.ow2.asm:asm-commons:9.0'
-    implementation 'com.android.tools.build:gradle:3.0.0'
+//    implementation 'com.android.tools.build:gradle:3.0.0'
 }
 
 // 根节点添加
