@@ -1,17 +1,22 @@
 apply plugin: 'java'
-apply plugin: 'maven'
+//apply plugin: 'maven'
 apply plugin: 'groovy'
-
+//apply plugin: 'maven'
+apply plugin: 'com.github.dcendents.android-maven'
+group='com.mampod.track'
 //compileGroovy {
 //    sourceCompatibility = 1.7
 //    targetCompatibility = 1.7
 //    options.encoding = "UTF-8"
 //}
 
-repositories {
-    jcenter()
-    mavenCentral()
-}
+//repositories {
+//    jcenter()
+//    mavenCentral()
+//    maven {
+//        url 'https://jitpack.io'
+//    }
+//}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -26,7 +31,7 @@ dependencies {
     implementation localGroovy()
     implementation 'org.ow2.asm:asm:9.0'
     implementation 'org.ow2.asm:asm-commons:9.0'
-    implementation 'com.android.tools.build:gradle:3.0.0'
+    implementation 'com.android.tools.build:gradle:3.3.2'
 }
 
 // 根节点添加
@@ -58,7 +63,7 @@ dependencies {
     sign configurations.archives
 }*/
 
-apply from:'bintray.gradle'
+//apply from:'bintray.gradle'
 
 
 
