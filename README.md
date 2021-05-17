@@ -19,17 +19,16 @@ by Lujie
 
     repositories {
             
-            maven {
-                //远程maven地址
-                url 'https://dl.bintray.com/idremo/statistics'
-            }
+             maven {
+                 url 'https://jitpack.io'
+             }
             
     }
     
     dependencies {
         
         //引入sdk插件
-        classpath 'com.mampod.track:trackplugin:{version}'
+        classpath 'com.github.lanshaoze.staticsSDK:trackplugin:{version}'
         
     }
     
@@ -38,8 +37,7 @@ by Lujie
         repositories {
             
             maven {
-               //远程maven地址
-               url 'https://dl.bintray.com/idremo/statistics'
+                 url 'https://jitpack.io'
             }
             
         }
@@ -82,7 +80,7 @@ by Lujie
     
         //引入sdk基础资源库
         
-        implementation 'com.mampod.track:tracksource:{version}'
+        implementation 'com.github.lanshaoze.staticsSDK:tracksource:{version}'
     }
     
 4. 在app的application类onCreate()方法中添加sdk初始化方法。
