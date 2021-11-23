@@ -36,6 +36,7 @@ public class LogMethodVisitor extends AdviceAdapter {
         this.className = className
         this.interfaces = interfaces
         this.visitedFragMethods = visitedFragMethods
+        if (methodName.equals())
         Logger.info("||开始扫描方法：${Logger.accCode2String(access)} ${methodName}${desc} ${superName}")
     }
 

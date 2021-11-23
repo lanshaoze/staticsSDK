@@ -5,8 +5,14 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v7.widget.RecyclerView;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
+
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
@@ -91,7 +97,7 @@ public class AutoTrackHelper {
     }
 
     /**
-     * 对应的埋点方法{@link android.support.v4.app.Fragment#onViewCreated(View, Bundle)}
+     * 对应的埋点方法{@link Fragment#onViewCreated(View, Bundle)}
      *
      * @param object   Fragment对象
      * @param rootView 对应View对象
@@ -115,7 +121,7 @@ public class AutoTrackHelper {
     }
 
     /**
-     * 对应的埋点方法{@link android.support.v4.app.Fragment#onResume()}
+     * 对应的埋点方法{@link Fragment#onResume()}
      *
      * @param object Fragment对象
      */
@@ -142,7 +148,7 @@ public class AutoTrackHelper {
     }
 
     /**
-     * 对应的埋点方法{@link android.support.v4.app.Fragment#onResume()}
+     * 对应的埋点方法{@link Fragment#onResume()}
      *
      * @param object Fragment对象
      */
@@ -179,7 +185,7 @@ public class AutoTrackHelper {
 
 
     /**
-     * 对应的埋点方法{@link android.support.v4.app.Fragment#onDestroy()}
+     * 对应的埋点方法{@link Fragment#onDestroy()}
      *
      * @param object Fragment对象
      */
@@ -201,7 +207,7 @@ public class AutoTrackHelper {
     }
 
     /**
-     * 对应的埋点方法{@link android.support.v4.app.Fragment#setUserVisibleHint(boolean)}
+     * 对应的埋点方法{@link Fragment#setUserVisibleHint(boolean)}
      *
      * @param object          Fragment对象
      * @param isVisibleToUser 对应boolean值
@@ -235,7 +241,7 @@ public class AutoTrackHelper {
     }
 
     /**
-     * 对应的埋点方法{@link android.support.v4.app.Fragment#onHiddenChanged(boolean)}
+     * 对应的埋点方法{@link Fragment#onHiddenChanged(boolean)}
      *
      * @param object Fragment对象
      * @param hidden 对应boolean值
@@ -267,7 +273,7 @@ public class AutoTrackHelper {
     }
 
     /**
-     * 对应实现接口的埋点方法{@link android.support.v4.view.ViewPager.OnPageChangeListener#onPageSelected(int)}
+     * 对应实现接口的埋点方法{@link ViewPager.OnPageChangeListener#onPageSelected(int)}
      *
      * @param object   this对象
      * @param position 参数选择索引
@@ -675,7 +681,7 @@ public class AutoTrackHelper {
 
 
     /**
-     * 对应实现接口的埋点方法{@link android.support.design.widget.NavigationView.OnNavigationItemSelectedListener#onNavigationItemSelected(MenuItem)}
+     * 对应实现接口的埋点方法{@link NavigationView.OnNavigationItemSelectedListener#onNavigationItemSelected(MenuItem)}
      *
      * @param object   this对象
      * @param menuItem 参数对应MenuItem
@@ -886,8 +892,8 @@ public class AutoTrackHelper {
                     }
                 }
 
-            } else if (dialog instanceof android.support.v7.app.AlertDialog) {
-                android.support.v7.app.AlertDialog alertDialog = (android.support.v7.app.AlertDialog) dialog;
+            } else if (dialog instanceof androidx.appcompat.app.AlertDialog) {
+                androidx.appcompat.app.AlertDialog alertDialog = (androidx.appcompat.app.AlertDialog) dialog;
                 Button button = alertDialog.getButton(whichButton);
                 if (button != null) {
                     if (!TextUtils.isEmpty(button.getText())) {

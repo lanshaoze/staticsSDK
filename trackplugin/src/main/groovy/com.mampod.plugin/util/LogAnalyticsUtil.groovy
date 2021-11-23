@@ -6,8 +6,7 @@ import org.objectweb.asm.MethodVisitor
 /**
  * 字节码方法操作符类
  *
- * @package com.mampod.plugin.util
- * @author: Jack-Lu
+ * @package com.mampod.plugin.util* @author: Jack-Lu
  * @date:
  */
 public class LogAnalyticsUtil implements Opcodes {
@@ -54,9 +53,11 @@ public class LogAnalyticsUtil implements Opcodes {
         targetActivityClass.add('android/support/v7/app/AppCompatActivity')
 
         /**
-         * For Adapter
+         * for AndroidX Activity
          */
-        targetAdapterClass.add('android/support/v7/widget/RecyclerView$Adapter')
+        targetActivityClass.add('androidx/fragment/app/FragmentActivity')
+        targetActivityClass.add('androidx/appcompat/app/AppCompatActivity')
+
     }
 
     static boolean isSynthetic(int access) {
@@ -94,11 +95,6 @@ public class LogAnalyticsUtil implements Opcodes {
     static boolean isInstanceOfActivity(String superName) {
         return targetActivityClass.contains(superName)
     }
-
-    static boolean isInstanceOfAdapter(String superName) {
-        return targetAdapterClass.contains(superName)
-    }
-
 
     static void visitMethodWithLoadedParams(MethodVisitor methodVisitor, int opcode, String owner, String methodName, String methodDesc, int start, int count, List<Integer> paramOpcodes) {
         for (int i = start; i < start + count; i++) {

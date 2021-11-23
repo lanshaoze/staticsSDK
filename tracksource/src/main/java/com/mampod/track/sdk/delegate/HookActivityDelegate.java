@@ -1,15 +1,14 @@
 package com.mampod.track.sdk.delegate;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 
 import com.mampod.track.sdk.annotation.PageResume;
 import com.mampod.track.sdk.annotation.PageStop;
 import com.mampod.track.sdk.listener.IPageCollection;
 import com.mampod.track.sdk.annotation.PageExit;
 import com.mampod.track.sdk.annotation.PageOpen;
-import com.mampod.track.sdk.tool.AutoTrackUtil;
 
 import org.json.JSONObject;
 /**
